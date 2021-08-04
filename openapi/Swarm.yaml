@@ -2,15 +2,15 @@ openapi: 3.0.3
 
 info:
   version: 1.0.0
-  title: Swarm API
+  title: New-Swarm API
   description: "A list of the currently provided Interfaces to interact with the swarm, implementing file operations and sending messages"
 
 security:
   - {}
 
 externalDocs:
-  description: Browse the documentation @ the Swarm Docs
-  url: "https://docs.ethswarm.org"
+  description: Browse the documentation @ the New-Swarm Docs
+  url: "https://www.newswarm.info/docs/"
 
 servers:
   - url: "http://{apiRoot}:{port}/v1"

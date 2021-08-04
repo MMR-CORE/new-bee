@@ -8,8 +8,8 @@ security:
   - {}
 
 externalDocs:
-  description: Browse the documentation @ the Swarm Docs
-  url: "https://docs.ethswarm.org"
+  description: Browse the documentation @ the New-Swarm Docs
+  url: "https://www.newswarm.info/docs/"
 
 servers:
   - url: "http://{apiRoot}:{port}"

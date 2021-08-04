@@ -1,6 +1,6 @@
 [Unit]
-Description=Bee - Ethereum Swarm node
-Documentation=https://docs.ethswarm.org
+Description=Bee - Ethereum New-Swarm node
+Documentation=https://www.newswarm.info/docs/
 After=network.target
 
 [Service]

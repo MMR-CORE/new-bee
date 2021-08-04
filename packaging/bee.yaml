@@ -1,4 +1,4 @@
-## Bee configuration - https://gateway.ethswarm.org/bzz/docs.swarm.eth/docs/installation/configuration/
+## Bee configuration -
 
 ## HTTP API listen address (default ":11633")
 # api-addr: :11633
@@ -36,7 +36,7 @@ debug-api-enable: true
 # full-node: false
 ## NAT exposed address
 # nat-addr: ""
-## ID of the Swarm network (default 5)
+## ID of the New-Swarm network (default 5)
 # network-id: 5
 ## P2P listen address (default ":11634")
 # p2p-addr: :11634

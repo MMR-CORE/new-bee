@@ -15,8 +15,7 @@ If needed obtain a free Infura account and set:
 `swap-endpoint: wss://goerli.infura.io/ws/v3/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 It is recommended to use external signer with bee.
 Check documentation for more info:
-- SWAP https://docs.ethswarm.org/docs/installation/manual#swap-bandwidth-incentives
-- External signer https://docs.ethswarm.org/docs/installation/bee-clef
+- SWAP https://www.newswarm.info/docs/installation/manual#swap-bandwidth-incentives
 
 After you finish configuration run 'sudo bee-get-addr'.
     "
