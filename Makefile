@@ -26,27 +26,6 @@ binary: dist FORCE
 dist:
 	mkdir $@
 
-.PHONY: beekeeper
-beekeeper:
-	curl -sSfL https://raw.githubusercontent.com/ethersphere/beekeeper/master/scripts/install.sh | BEEKEEPER_INSTALL_DIR=$(BEEKEEPER_INSTALL_DIR) USE_SUDO=$(BEEKEEPER_USE_SUDO) bash
-	test -f ~/.beekeeper.yaml || curl -sSfL https://raw.githubusercontent.com/ethersphere/beekeeper/$(BEEKEEPER_BRANCH)/config/beekeeper-local.yaml -o ~/.beekeeper.yaml
-	mkdir -p ~/.beekeeper && curl -sSfL https://raw.githubusercontent.com/ethersphere/beekeeper/$(BEEKEEPER_BRANCH)/config/local.yaml -o ~/.beekeeper/local.yaml
-
-.PHONY: beelocal
-beelocal:
-	curl -sSfL https://raw.githubusercontent.com/ethersphere/beelocal/$(BEELOCAL_BRANCH)/beelocal.sh | bash
-
-.PHONY: deploylocal
-deploylocal:
-	beekeeper create bee-cluster --cluster-name $(BEEKEEPER_CLUSTER)
-
-.PHONY: testlocal
-testlocal:
-	export PATH=${PATH}:$$($(GO) env GOPATH)/bin
-	beekeeper check --cluster-name local --checks=ci-full-connectivity,ci-gc,ci-manifest,ci-pingpong,ci-pss,ci-pushsync-chunks,ci-retrieval,ci-settlements,ci-soc
-
-.PHONY: testlocal-all
-all: beekeeper beelocal deploylocal testlocal
 
 .PHONY: lint
 lint: linter
