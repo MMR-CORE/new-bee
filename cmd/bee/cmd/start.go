@@ -80,20 +80,26 @@ func (c *command) initStartCmd() (err error) {
 			}
 
 			beeASCII := `
-Welcome to newswarm-lab.... FBzz FBzz FBzz
-                \     /
-            \    o ^ o    /
-              \ (     ) /
-   ____________(%%%%%%%)____________
-  (     /   /  )%%%%%%%(  \   \     )
-  (___/___/__/           \__\___\___)
-     (     /  /(%%%%%%%)\  \     )
-      (__/___/ (%%%%%%%) \___\__)
-              /(       )\
-            /   (%%%%%)   \
-                 (%%%)
-                   !                   `
+Welcome to newswarm-lab.... FBZZ FBZZ FBZZ
 
+                    \         /                                
+*------*              \(,,,)/               *------*                      
+ *--------*       \   (@   @）   /        *--------*           
+  *----------*     \  *BBBBB*  /     *----------*          
+    *-----------*    *BBBBBBB*    *-----------*              
+     *-------------*BBBBBBBBBBB*-------------*              
+       *------------BBBBBBBBBBB-------------*              
+          *----------*BBBBBBB*----------*                  
+                    *BBBBBBBBB*                               
+                 / *BBBBBBBBBBB* \                          
+               /   *BBBBBBBBBBB*   \                           
+             /    / *BBBBBBBBB* \    \                         
+           /    /   *BBBBBBBBB*  \     \                        
+               |    *BBBBBBBBB*   |                            
+               |     *BBBBBBB*    |                            
+              /       *BBBBB*      \                           
+             /                      \
+                                                   `
 			fmt.Println(beeASCII)
 			fmt.Print(`
 DISCLAIMER:
@@ -388,12 +394,12 @@ func (c *command) configureSigner(cmd *cobra.Command, logger logging.Logger) (co
 	//	}
 	//} else {
 	//	logger.Warning("clef is not enabled; portability and security of your keys is sub optimal")
-		swarmPrivateKey, _, err := keystore.Key("swarm", password)
-		if err != nil {
-			return nil, fmt.Errorf("swarm key: %w", err)
-		}
-		signer = crypto.NewDefaultSigner(swarmPrivateKey)
-		publicKey = &swarmPrivateKey.PublicKey
+	swarmPrivateKey, _, err := keystore.Key("swarm", password)
+	if err != nil {
+		return nil, fmt.Errorf("swarm key: %w", err)
+	}
+	signer = crypto.NewDefaultSigner(swarmPrivateKey)
+	publicKey = &swarmPrivateKey.PublicKey
 
 	//}
 
