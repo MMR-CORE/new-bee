@@ -11,18 +11,23 @@ var (
 
 	// start block
 	goerliStartBlock = uint64(5208103)
-	xdaiStartBlock   = uint64(16515648)
+	xdaiStartBlock   = uint64(17511766)
 
-	// factory address
-	goerliFactoryAddress             = common.HexToAddress("0xcD87A69Ebd39FB48E8Ca8428026c47d9F3b2BDa5")
+	// price oracle address
 	goerliPriceOracleContractAddress = common.HexToAddress("0xD871739e523849C15773649C1b617Df1cDa302C1")
+	xdaiPriceOracleContractAddress = common.HexToAddress("0xAB4Ff9942EA3b6EcbBAD84f3B0B1f2FCDB739674")
 
-	xdaiContractAddress = common.HexToAddress("0x0FDc5429C50e2a39066D8A94F3e2D2476fcc3b85")
-	xdaiFactoryAddress  = common.HexToAddress("0xc2d5a532cf69aa9a1378737d8ccdef884b6e7420")
+	// token address
+	goerliTokenFBZZ = "0x5E4B0229565643fD9f5613aBf4B1498598033445"
+	xdaiTokenXFBZZ = "0x36F8096d0308C786F56f7cFE90ff2F120367197b"
 
 	// postage stamp
 	goerliPostageStampContractAddress = common.HexToAddress("0x208689548f803150021142f21F2428551A060AA5")
-	xdaiPostageStampContractAddress   = common.HexToAddress("0x6a1a21eca3ab28be85c7ba22b2d6eae5907c900e")
+	xdaiPostageStampContractAddress   = common.HexToAddress(" 0x8106747bFdBed1c45691000BaE42dFE5a1F5692f")
+
+	// factory address
+	goerliFactoryAddress             = common.HexToAddress("0xcD87A69Ebd39FB48E8Ca8428026c47d9F3b2BDa5")
+	xdaiFactoryAddress  = common.HexToAddress("0x830b0711C3F052C1cEd24abfD27BFbB86AcB51Bf")
 )
 
 type ChainConfig struct {
@@ -48,7 +53,7 @@ func GetChainConfig(chainID int64) (*ChainConfig, bool) {
 		cfg.StartBlock = xdaiStartBlock
 		cfg.CurrentFactory = xdaiFactoryAddress
 		cfg.LegacyFactories = []common.Address{}
-		cfg.PriceOracleAddress = xdaiContractAddress
+		cfg.PriceOracleAddress = xdaiPriceOracleContractAddress
 		return &cfg, true
 	default:
 		return &cfg, false
