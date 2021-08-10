@@ -136,7 +136,7 @@ inability to use, or your interaction with other nodes or the software.`)
 
 			if mainnet {
 				userHasSetNetworkID := c.config.IsSet(optionNameNetworkID)
-				if userHasSetNetworkID && networkID != 1 {
+				if userHasSetNetworkID && networkID != 10 {
 					return errors.New("provided network ID does not match mainnet")
 				}
 				networkID = 10
