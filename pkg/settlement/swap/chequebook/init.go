@@ -203,7 +203,7 @@ func Init(
 
 		if fullNodeMode {
 			if swapInitialDeposit.Cmp(balance) > 0 {
-				return nil, fmt.Errorf("%s deposit balance %s, less than 100000000000000000000", chequebookAddress.String(), balance.String())
+				return nil, fmt.Errorf("%s deposit balance %s, less than 10000000000000000000000", chequebookAddress.String(), balance.String())
 			}
 		}
 

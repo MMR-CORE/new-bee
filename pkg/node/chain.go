@@ -153,7 +153,7 @@ func InitChequebookService(
 		ctx = sctx.SetGasPrice(ctx, gasPrice)
 	}
 
-	minDepositStr := "100000000000000000000"
+	minDepositStr := "10000000000000000000000"
 	minDeposit, ok := new(big.Int).SetString(minDepositStr, 10)
 	if !ok {
 		return nil, fmt.Errorf("initial minDepositStr \"%s\" cannot be parsed", minDepositStr)
@@ -161,7 +161,7 @@ func InitChequebookService(
 
 	if fullNodeMode {
 		if lt := deposit.Cmp(minDeposit) < 0; lt {
-			return nil, fmt.Errorf("deposit %s too low, minimal value is 100000000000000000000", initialDeposit)
+			return nil, fmt.Errorf("deposit %s too low, minimal value is 10000000000000000000000", initialDeposit)
 		}
 	}
 
