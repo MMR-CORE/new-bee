@@ -139,7 +139,7 @@ inability to use, or your interaction with other nodes or the software.`)
 				if userHasSetNetworkID && networkID != 1 {
 					return errors.New("provided network ID does not match mainnet")
 				}
-				networkID = 1
+				networkID = 10
 			}
 
 			bootnodes := c.config.GetStringSlice(optionNameBootnodes)
@@ -454,16 +454,14 @@ func getConfigByNetworkID(networkID uint64, defaultBlockTime uint64) *networkCon
 		blockTime: uint64(time.Duration(defaultBlockTime) * time.Second),
 	}
 	switch networkID {
-	case 1:
+	case 10:  // mainnet
 		config.blockTime = uint64(5 * time.Second)
 		config.chainID = 100
-	case 5: //staging
+	case 5: //test
 		config.bootNodes = []string{
 			"/ip4/178.79.132.147/tcp/11634/p2p/16Uiu2HAmPE6TdBbU1MyYQeEWjCdZVHER2aPGAXWS1S5t9yJnCPXe",
 			"/ip4/173.255.200.73/tcp/11634/p2p/16Uiu2HAmLcN6VR9we5xHTLheNZdU1iCaisYvzBE4hwpeAzKPwB3v",
 			"/ip4/172.105.182.185/tcp/11634/p2p/16Uiu2HAkyWwezjncYNxLNaztzep1GqP2nTiQk11JCNHc9nnqn8aA"}
-		config.chainID = 5
-	case 10: //test
 		config.chainID = 5
 	default: //will use the value provided by the chain
 		config.chainID = -1
