@@ -23,7 +23,7 @@ var (
 
 	// postage stamp
 	goerliPostageStampContractAddress = common.HexToAddress("0x208689548f803150021142f21F2428551A060AA5")
-	xdaiPostageStampContractAddress   = common.HexToAddress(" 0x8106747bFdBed1c45691000BaE42dFE5a1F5692f")
+	xdaiPostageStampContractAddress   = common.HexToAddress("0x8106747bFdBed1c45691000BaE42dFE5a1F5692f")
 
 	// factory address
 	goerliFactoryAddress             = common.HexToAddress("0xcD87A69Ebd39FB48E8Ca8428026c47d9F3b2BDa5")
