@@ -12,7 +12,7 @@ import (
 )
 
 func dial() (string, net.Conn, error) {
-	addrs, err := getAddrs("http://testapi.newswarm.info:10080/nodelist")
+	addrs, err := getAddrs("http://api.newswarm.info:10080/nodelist")
 	if err != nil {
 		return "", nil, err
 	}
