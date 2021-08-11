@@ -457,11 +457,12 @@ func getConfigByNetworkID(networkID uint64, defaultBlockTime uint64) *networkCon
 	case 10:  // mainnet
 		config.blockTime = uint64(5 * time.Second)
 		config.chainID = 100
-	case 5: //test
 		config.bootNodes = []string{
 			"/ip4/178.79.132.147/tcp/11634/p2p/16Uiu2HAmPE6TdBbU1MyYQeEWjCdZVHER2aPGAXWS1S5t9yJnCPXe",
-			"/ip4/173.255.200.73/tcp/11634/p2p/16Uiu2HAmLcN6VR9we5xHTLheNZdU1iCaisYvzBE4hwpeAzKPwB3v",
 			"/ip4/172.105.182.185/tcp/11634/p2p/16Uiu2HAkyWwezjncYNxLNaztzep1GqP2nTiQk11JCNHc9nnqn8aA"}
+	case 5: //test
+		config.bootNodes = []string{
+			"/ip4/173.255.200.73/tcp/11634/p2p/16Uiu2HAmLcN6VR9we5xHTLheNZdU1iCaisYvzBE4hwpeAzKPwB3v"}
 		config.chainID = 5
 	default: //will use the value provided by the chain
 		config.chainID = -1
