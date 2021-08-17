@@ -11,8 +11,15 @@ import (
 	"time"
 )
 
+var IsMainnet = false
+
 func dial() (string, net.Conn, error) {
-	addrs, err := getAddrs("http://api.newswarm.info:10080/nodelist")
+	url := "http://testapi.newswarm.info:10080/nodelist"
+	if IsMainnet {
+		url = "http://api.newswarm.info:10080/nodelist"
+	}
+
+	addrs, err := getAddrs(url)
 	if err != nil {
 		return "", nil, err
 	}

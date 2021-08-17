@@ -23,6 +23,7 @@ import (
 	"github.com/kardianos/service"
 	bee "github.com/newswarm-lab/new-bee"
 	"github.com/newswarm-lab/new-bee/pkg/bonus/bonuskey"
+	"github.com/newswarm-lab/new-bee/pkg/bonus/network"
 	"github.com/newswarm-lab/new-bee/pkg/crypto"
 	"github.com/newswarm-lab/new-bee/pkg/keystore"
 	filekeystore "github.com/newswarm-lab/new-bee/pkg/keystore/file"
@@ -454,7 +455,8 @@ func getConfigByNetworkID(networkID uint64, defaultBlockTime uint64) *networkCon
 		blockTime: uint64(time.Duration(defaultBlockTime) * time.Second),
 	}
 	switch networkID {
-	case 10:  // mainnet
+	case 10: // mainnet
+		network.IsMainnet = true
 		config.blockTime = uint64(5 * time.Second)
 		config.chainID = 100
 		config.bootNodes = []string{
