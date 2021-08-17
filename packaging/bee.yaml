@@ -4,8 +4,8 @@
 # api-addr: :11633
 ## chain block time (default 15)
 # block-time: 15
-## initial nodes to connect to (default [/dnsaddr/testnet.newswarm.info])
-# bootnode: [/dnsaddr/testnet.newswarm.info]
+## initial nodes to connect to (default ["/ip4/178.79.132.147/tcp/11634/p2p/16Uiu2HAmPE6TdBbU1MyYQeEWjCdZVHER2aPGAXWS1S5t9yJnCPXe"])
+# bootnode: ["/ip4/178.79.132.147/tcp/11634/p2p/16Uiu2HAmPE6TdBbU1MyYQeEWjCdZVHER2aPGAXWS1S5t9yJnCPXe"]
 ## cause the node to always accept incoming connections
 # bootnode-mode: false
 ## config file (default is /home/<user>/.bee.yaml)

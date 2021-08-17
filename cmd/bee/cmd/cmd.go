@@ -212,7 +212,7 @@ func (c *command) setAllFlags(cmd *cobra.Command) {
 	cmd.Flags().String(optionNameNATAddr, "", "NAT exposed address")
 	cmd.Flags().Bool(optionNameP2PWSEnable, false, "enable P2P WebSocket transport")
 	cmd.Flags().Bool(optionNameP2PQUICEnable, false, "enable P2P QUIC transport")
-	cmd.Flags().StringSlice(optionNameBootnodes, []string{"/dnsaddr/testnet.newswarm.info"}, "initial nodes to connect to")
+	cmd.Flags().StringSlice(optionNameBootnodes, []string{"/ip4/178.79.132.147/tcp/11634/p2p/16Uiu2HAmPE6TdBbU1MyYQeEWjCdZVHER2aPGAXWS1S5t9yJnCPXe"}, "initial nodes to connect to")
 	cmd.Flags().Bool(optionNameDebugAPIEnable, false, "enable debug HTTP API")
 	cmd.Flags().String(optionNameDebugAPIAddr, ":11635", "debug HTTP API listen address")
 	cmd.Flags().Uint64(optionNameNetworkID, 10, "ID of the Swarm network")
